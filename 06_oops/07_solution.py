@@ -1,0 +1,32 @@
+# Problem: Add a static method to the Car class that returns a general description of a car.
+
+
+class Car:
+    def __init__(self,brand,model):
+        self.brand = brand
+        self.model = model
+
+    def display(self):
+        return f'{self.brand} {self.model}'
+    
+    def fuel_type(self):
+        return "Petrol or diesel"
+    
+    @staticmethod
+    def general_desc():
+        return "car is a means of transport"
+    
+
+
+class ElectricCar(Car):
+    def __init__(self, brand, model,battery_size):
+        super().__init__(brand, model) 
+        self.battery_size = battery_size
+
+    def fuel_type(self):
+        return "Electric Charge"
+   
+tesla_car = ElectricCar("Telsa","Model S","89KWH")
+my_car = Car("Tata","Safari")
+
+print(my_car.general_desc())
